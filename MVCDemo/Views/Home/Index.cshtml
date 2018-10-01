@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Addition of Two Numbers";
+}
+<h2>Addition of Two Numbers</h2>
+
+@model MVCDemo.Models.addModel
+@using (@Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                <label>Input One</label>
+            </td>
+            <td>
+                @Html.EditorFor(m => m.inputOne)
+                @Html.ValidationMessageFor(m => m.inputOne)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Input Two</label>
+            </td>
+            <td>
+                @Html.EditorFor(m => m.inputTwo)
+                @Html.ValidationMessageFor(m => m.inputTwo)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Result</label>
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.result)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add" />
+            </td>
+        </tr>
+    </table>
+}
